@@ -1,14 +1,43 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
 @import "bootstrap";
+
+//ヘッダー
+.site-header {
+  background-color: black;
+  a {
+    color: #999;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+//トップ画面
+.main-img {
+
+  height: 450px;
+  width: 100%;
+  margin: 56px 0 0 0;
+  background-image: image-url("movie.jpg"), image-url("music.jpg"), image-url("book.jpg");
+  background-position: left, center, right;
+  background-repeat  : no-repeat, no-repeat, no-repeat;
+  background-size: 33.33333333% 100%, 33.33333333% 100%, 33.33333333% 100%;
+}
+
+.main-text {
+  h1 {
+    font-family: "impact";
+    color: #ddd;
+    letter-spacing: 0.3em;
+    font-size: 50px;
+    margin: 10px 0 0 30px;
+  }
+}
+
+.category  {
+  margin-top: 100px;
+  .col-md-4{
+    text-align: center;
+    width: 33.33333333%;
+  }
+}
