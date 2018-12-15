@@ -12,7 +12,10 @@
     <header>
       <%= render "layouts/header" %>
     </header>
-    <%= yield %>
+    <div class="main-wrapper">
+      <%= yield %>
+    </div>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

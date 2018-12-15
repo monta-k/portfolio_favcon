@@ -5,6 +5,10 @@
     <%= link_to "Movie", "#", class: "py-2 d-none d-md-inline-block" %>
     <%= link_to "Music", "#", class: "py-2 d-none d-md-inline-block" %>
     <%= link_to "Book", "#", class: "py-2 d-none d-md-inline-block" %>
-    <%= link_to "Setting", "#", class: "py-2 d-none d-md-inline-block" %>
+    <% if current_user %>
+      <%= link_to "Logout", destroy_user_session_url, method: :delete, class: "py-2 d-none d-md-inline-block" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_url, class: "py-2 d-none d-md-inline-block" %>
+    <% end %>
   </div>
 </nav>

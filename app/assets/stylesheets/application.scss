@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+//共通
+.main-wrapper {
+  margin-top: 56px
+}
+
 //ヘッダー
 .site-header {
   background-color: black;
@@ -17,11 +22,26 @@
 
   height: 450px;
   width: 100%;
-  margin: 56px 0 0 0;
+  margin: auto;
   background-image: image-url("movie.jpg"), image-url("music.jpg"), image-url("book.jpg");
   background-position: left, center, right;
   background-repeat  : no-repeat, no-repeat, no-repeat;
   background-size: 33.33333333% 100%, 33.33333333% 100%, 33.33333333% 100%;
+  .form {
+    background-color: rgba(192,192,192,0.2);
+    height: 70%;
+    width: 30%;
+    margin-left: 800px;
+    padding: 30px;
+    border-radius: 10px 10px 10px 10px;
+    .actions {
+      margin: 10px 0 10px 0;
+    }
+    a {
+      color: navy;
+      text-decoration: none;
+    }
+  }
 }
 
 .main-text {
