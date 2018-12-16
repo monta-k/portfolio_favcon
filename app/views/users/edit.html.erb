@@ -1,0 +1,35 @@
+<% provide(:title, "User information edit") %>
+<div class="profile-form-image">
+  <%= image_tag "person.jpeg", size: "128x128" %>
+</div>
+<div class="edit-profile-wrapper">
+  <h2>ユーザー情報変更</h2>
+  <div class="profile-form-wrap mx-auto">
+    <%= form_for(@user) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :username, "ユーザーネーム" %>
+        <%= f.text_field :username, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :sex, "性別" %><br>
+        <%= f.label :男性 %>
+        <%= f.radio_button :sex, :男性 %>
+        <%= "/" %>
+        <%= f.label :女性 %>
+        <%= f.radio_button :sex, :女性 %>
+      </div>
+
+      <%= f.submit "変更する", class: "btn btn-primary" %>
+      <%= link_to "パスワード変更", edit_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "アカウントを削除", registration_path(@user),
+            class: "btn btn-danger float-right", method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  </div>
+</div>

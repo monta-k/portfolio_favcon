@@ -61,3 +61,26 @@
     width: 33.33333333%;
   }
 }
+
+//プロフィール編集ページ、パスワード編集ページ
+
+.profile-form-image {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.edit-profile-wrapper{
+  margin-top: 30px;
+  h2 {
+    color: #696969;
+    display: inline;
+    margin-left: 380px;
+    border-bottom: solid 1px #696969;
+  }
+  .profile-form-wrap {
+    margin-top: 10px;
+    width: 40%;
+    padding: 50px;
+    background-color: #eee;
+  }
+}
