@@ -3,7 +3,7 @@
     <%= link_to "FavCon", root_path, class: "py-2 h5" %>
     <%= link_to "TimeLine", "#", class: "py-2 d-none d-md-inline-block" %>
     <%= link_to "Movie", "#", class: "py-2 d-none d-md-inline-block" %>
-    <%= link_to "Music", "#", class: "py-2 d-none d-md-inline-block" %>
+    <%= link_to "Music", music_index_path, class: "py-2 d-none d-md-inline-block" %>
     <%= link_to "Book", "#", class: "py-2 d-none d-md-inline-block" %>
     <% if current_user %>
       <%= link_to "Setting", edit_user_path(current_user), class: "py-2 d-none d-md-inline-block" %>
