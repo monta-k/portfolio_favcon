@@ -84,3 +84,16 @@
     background-color: #eee;
   }
 }
+
+//音楽ページ
+.search-area {
+  width: 30%;
+}
+
+.music-list {
+  .track {
+    width: 20%;
+    display: inline-block;
+    margin: 30px;
+  }
+}
