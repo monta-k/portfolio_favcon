@@ -1,0 +1,30 @@
+<div class="track-title">
+  <%= image_tag @track["artworkUrl100"] %>
+  <h2><%= @track["trackName"] %>/<%= @track["artistName"] %></h2>
+</div>
+
+<% if user_signed_in? %>
+  <div class="post-form mx-auto">
+    <%= form_for @post do |f| %>
+      <div class="form-group">
+        <%= f.hidden_field :artistName, value: @track["artistName"] %>
+        <%= f.hidden_field :artistId, value: @track["artistId"] %>
+        <%= f.hidden_field :trackName, value: @track["trackName"] %>
+        <%= f.hidden_field :trackId, value: @track["trackId"] %>
+        <%= f.hidden_field :genre, value: @track["primaryGenreName"] %>
+        <% if @track["kind"] == "feature-movie" %>
+          <%= f.hidden_field :track_type, value: "movie" %>
+        <% elsif @track["kind"] == "song" %>
+          <%= f.hidden_field :track_type, value: "music" %>
+        <% end %>
+
+        <%=f.label :content, "投稿文" %>
+        <%= f.text_area :content, class: "form-control", maxlength: 250 %>
+      </div>
+
+      <%= f.submit "投稿する", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% else %>
+  <%= link_to "投稿するにはログインが必要です", root_path %>
+<% end %>
