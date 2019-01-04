@@ -32,7 +32,7 @@
   <div class="music-list mx-auto row">
     <% @song_lists.from(1).each do |list| %>
       <div class="track">
-        <%= list["trackName"] %>
+        <%= link_to list["trackName"], new_post_path(track: list)  %>
       </div>
     <% end %>
   </div>
