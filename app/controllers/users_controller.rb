@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :show]
 
   def edit
     @user = User.find(params[:id])
@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :desc)
   end
 
   private

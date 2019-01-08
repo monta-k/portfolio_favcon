@@ -6,5 +6,5 @@ class Post < ApplicationRecord
   validates :trackName, presence: true
   validates :trackId, presence: true
   validates :genre, presence: true
-  validates :content, presence: true, length: { maximum: 250 }
+  validates :content, presence: true, length: { maximum: 400 }
 end
