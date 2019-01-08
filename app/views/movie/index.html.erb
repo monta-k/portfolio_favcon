@@ -18,3 +18,23 @@
     <% end %>
   </div>
 <% end %>
+
+<% if @posts %>
+  <div class="post-list">
+    <h3 class="text-center posts-count">映画の投稿一覧</h3>
+    <ul class="row">
+      <% @posts.each do |post| %>
+        <li>
+          <h4> <%= post.trackName %></h4>
+          <h5><%= post.artistName %></h5>
+          <div class="content">
+            <p><%= post.content %></p>
+          </div>
+          <%= link_to user_path(post.user) do %>
+            <h6><%= post.user.username %></h6>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
