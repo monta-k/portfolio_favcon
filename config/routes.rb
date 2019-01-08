@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#index"
   devise_for :users
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :show]
   resources :music, only: [:index]
   resources :movie, only: [:index]
   resources :posts, only: [:new, :create]
