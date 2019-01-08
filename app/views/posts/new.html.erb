@@ -28,3 +28,21 @@
 <% else %>
   <%= link_to "投稿するにはログインが必要です", root_path %>
 <% end %>
+
+<div class="post-list">
+  <h3 class="text-center posts-count"><%= @track["trackName"] %>に関する投稿： <%= @posts.count %>件</h3>
+  <ul class="row">
+    <% @posts.each do |post| %>
+      <li>
+        <h4> <%= post.trackName %></h4>
+        <h5><%= post.artistName %></h5>
+        <div class="content">
+          <p><%= post.content %></p>
+        </div>
+        <%= link_to user_path(post.user) do %>
+          <h6><%= post.user.username %></h6>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

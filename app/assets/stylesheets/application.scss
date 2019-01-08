@@ -61,9 +61,14 @@ body {
 
 .category  {
   margin-top: 100px;
-  .col-md-4{
-    text-align: center;
-    width: 33.33333333%;
+  .row {
+    padding: 10px;
+    background-color: white;
+    border-radius: 30px;
+    .col-md-4{
+      text-align: center;
+      width: 33.33333333%;
+    }
   }
 }
 
@@ -74,9 +79,13 @@ body {
   padding: 10px 0px;
 }
 
+//投稿一覧
 .post-list {
   margin: 0;
   padding: 0;
+  .posts-count {
+    margin-top: 15px;
+  }
   ul {
     padding: 0;
     margin: 0;
