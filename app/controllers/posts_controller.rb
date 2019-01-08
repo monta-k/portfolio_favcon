@@ -4,11 +4,12 @@ class PostsController < ApplicationController
   def new
     @track = params[:track]
     @post = current_user.posts.build if user_signed_in?
+    @posts = Post.where(trackId: @track["trackId"])
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-    if @post.save
+    post = current_user.posts.build(post_params)
+    if post.save
       redirect_to user_path(current_user)
     else
       redirect_to request.referrer
