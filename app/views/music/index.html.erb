@@ -14,7 +14,7 @@
     <% end %>
   </div>
 <% elsif @album_lists %>
-  <h1><%= @album_lists.first["artistName"] %></h1>
+  <h1><%= @artist_name %></h1>
   <div class="music-list mx-auto row">
     <% @album_lists.from(1).each do |list| %>
       <div class="track">
@@ -28,12 +28,32 @@
   </div>
 <% elsif @song_lists %>
   <%= image_tag @song_lists.first["artworkUrl100"], size: "200x200" %>
-  <h1><%= @song_lists.first["collectionName"] %></h1>
+  <h1><%= @album_name %></h1>
   <div class="music-list mx-auto row">
     <% @song_lists.from(1).each do |list| %>
       <div class="track">
         <%= link_to list["trackName"], new_post_path(track: list)  %>
       </div>
     <% end %>
+  </div>
+<% end %>
+
+<% if @posts %>
+  <div class="post-list">
+    <h3 class="text-center posts-count"><%= @artist_name || @album_name || "音楽" %>の投稿一覧</h3>
+    <ul class="row">
+      <% @posts.each do |post| %>
+        <li>
+          <h4> <%= post.trackName %></h4>
+          <h5><%= post.artistName %></h5>
+          <div class="content">
+            <p><%= post.content %></p>
+          </div>
+          <%= link_to user_path(post.user) do %>
+            <h6><%= post.user.username %></h6>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 <% end %>

@@ -4,7 +4,7 @@ class MovieController < ApplicationController
       @search_word = params[:q]
       @movie_lists = SearchMovie.search_by_title(params[:q])
     else
-      @posts = Post.where(track_type: 0)
+      @posts = Post.where(track_type: 0).order(created_at: :desc)
     end
   end
 end
