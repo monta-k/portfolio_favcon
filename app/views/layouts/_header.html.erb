@@ -1,7 +1,9 @@
 <nav class="site-header py-1 fixed-top my-auto">
   <div class="container d-flex flex-column flex-md-row justify-content-between">
     <%= link_to "FavCon", root_path, class: "py-2 h5" %>
-    <%= link_to "TimeLine", user_path(current_user), class: "py-2 d-none d-md-inline-block" %>
+    <% if current_user %>
+      <%= link_to "TimeLine", user_path(current_user), class: "py-2 d-none d-md-inline-block" %>
+    <% end %>
     <%= link_to "Movie", movie_index_path, class: "py-2 d-none d-md-inline-block" %>
     <%= link_to "Music", music_index_path, class: "py-2 d-none d-md-inline-block" %>
     <%= link_to "Book", "#", class: "py-2 d-none d-md-inline-block" %>
