@@ -1,0 +1,17 @@
+<ul class="row">
+  <% @posts.each do |post| %>
+    <li>
+      <h4> <%= post.trackName %></h4>
+      <h5><%= post.artistName %></h5>
+      <div class="content">
+        <p><%= post.content %></p>
+      </div>
+      <%= link_to user_path(post.user) do %>
+        <h6><%= post.user.username %></h6>
+      <% end %>
+      <% if post.user == current_user %>
+        <%= link_to "投稿削除", post, method: :delete, data: {confirm: "削除してよろしいですか？"}, class: "delete-button" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
