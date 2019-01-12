@@ -1,7 +1,7 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= devise_error_messages %>
 
   <%= f.text_field :username, autofocus: true, placeholder: "ユーザーネーム", autocomplete: "username", class: "form-control" %>
   <%= f.email_field :email, placeholder: "メールアドレス", autocomplete: "email", class: "form-control" %>

@@ -34,7 +34,7 @@ body {
   background-size: 33.33333333% 100%, 33.33333333% 100%, 33.33333333% 100%;
   .form {
     background-color: rgba(192,192,192,0.2);
-    height: 70%;
+    height: 80%;
     width: 30%;
     margin-left: 800px;
     padding: 30px;
@@ -45,6 +45,10 @@ body {
     a {
       color: navy;
       text-decoration: none;
+    }
+    p {
+      margin: 0;
+      font-size: 3px;
     }
   }
 }
