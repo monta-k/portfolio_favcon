@@ -6,11 +6,11 @@ class ITunesSearchAPI
   format :json
 
   class << self
-    def search(query={})
+    def search(query = {})
       get("/search", :query => query)["results"]
     end
 
-    def lookup(query={})
+    def lookup(query = {})
       get("/lookup", :query => query)["results"]
     end
   end

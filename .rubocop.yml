@@ -13,3 +13,12 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
     - 'path/ruby'
+
+Metrics/LineLength:
+  Enabled: false
+
+Airbnb/ClassOrModuleDeclaredInWrongFile:
+  Enabled: false
+
+Airbnb/ModuleMethodInWrongFile:
+  Enabled: false
