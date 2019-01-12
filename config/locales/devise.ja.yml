@@ -68,3 +68,4 @@ ja:
         password: パスワード
         password_confirmation: 確認パスワード
         email: メールアドレス
+        current_password: 現在のパスワード
