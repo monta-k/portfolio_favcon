@@ -104,12 +104,16 @@ body {
       .content {
         border-top: solid 1px #eee;
       }
-      h6 {
-        border-top: solid 1px #eee;
-      }
       a {
         color: black;
         text-decoration: none;
+        .post-user-info {
+          padding-top: 5px;
+          border-top: solid 1px #eee;
+          h6 {
+            display: inline-block;
+          }
+        }
       }
       .delete-button {
         font-size: 15px;
