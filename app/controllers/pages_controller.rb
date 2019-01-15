@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
-  before_action :logged_in_user, only: :index
+  before_action :authenticate_user!, only: :index
 
   def index
+    @posts = current_user.feed.order(created_at: :desc)
   end
 
   private
