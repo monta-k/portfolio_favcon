@@ -1,0 +1,27 @@
+<div class="search-area mx-auto">
+  <%= form_tag(movie_index_path, method: :get) do %>
+    <%= label_tag(:q, "映画タイトルで検索") %>
+    <%= text_field_tag(:q, "", class: "form-control" ) %>
+  <% end %>
+</div>
+<% if @movie_lists %>
+  <h1>検索結果：<%= @search_word %></h1>
+  <div class="music-list mx-auto row">
+    <% @movie_lists.each do |list| %>
+      <div class="track">
+        <%= link_to new_post_path(track: list) do %>
+          <%= image_tag list["artworkUrl100"] %>
+          <br>
+          <%= list["trackName"] %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @posts %>
+  <div class="post-list">
+    <h3 class="text-center posts-count">映画の投稿一覧</h3>
+    <%= render 'posts/post_list' %>
+  </div>
+<% end %>

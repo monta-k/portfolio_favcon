@@ -1,0 +1,46 @@
+<div class="search-area mx-auto">
+  <%= form_tag(music_index_path, method: :get) do %>
+    <%= label_tag(:q, "アーティスト名で検索") %>
+    <%= text_field_tag(:q, "", class: "form-control" ) %>
+  <% end %>
+</div>
+<% if @artist_lists %>
+  <h1>検索結果：<%= @search_word %></h1>
+  <div class="music-list mx-auto">
+    <% @artist_lists.each do |list| %>
+      <div class="track">
+        <%= link_to list["artistName"], music_index_path(artist_id: list["artistId"]) %>
+      </div>
+    <% end %>
+  </div>
+<% elsif @album_lists %>
+  <h1><%= @artist_name %></h1>
+  <div class="music-list mx-auto row">
+    <% @album_lists.from(1).each do |list| %>
+      <div class="track">
+        <%= link_to music_index_path(album_id: list["collectionId"]) do %>
+          <%= image_tag list["artworkUrl100"] %>
+          <br>
+          <%= list["collectionName"] %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% elsif @song_lists %>
+  <%= image_tag @song_lists.first["artworkUrl100"], size: "200x200" %>
+  <h1><%= @album_name %></h1>
+  <div class="music-list mx-auto row">
+    <% @song_lists.from(1).each do |list| %>
+      <div class="track">
+        <%= link_to list["trackName"], new_post_path(track: list)  %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @posts %>
+<div class="post-list">
+  <h3 class="text-center posts-count"><%= @artist_name || @album_name || "音楽" %>の投稿一覧</h3>
+  <%= render 'posts/post_list' %>
+</div>
+<% end %>

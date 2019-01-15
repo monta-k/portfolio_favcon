@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PortfolioFavcon</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+    <div class="main-wrapper">
+      <%= yield %>
+    </div>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

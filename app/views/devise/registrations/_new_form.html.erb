@@ -1,0 +1,16 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages %>
+
+  <%= f.text_field :username, autofocus: true, placeholder: "ユーザーネーム", autocomplete: "username", class: "form-control" %>
+  <%= f.email_field :email, placeholder: "メールアドレス", autocomplete: "email", class: "form-control" %>
+  <%= f.password_field :password, placeholder: "パスワード", autocomplete: "new-password", class: "form-control" %>
+  <%= f.password_field :password_confirmation, placeholder: "パスワード(確認)", autocomplete: "new-password", class: "form-control" %>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-secondary" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

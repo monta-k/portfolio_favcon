@@ -2,6 +2,7 @@ inherit_from:
   - .rubocop_airbnb.yml
 
 AllCops:
+  TargetRubyVersion: 2.4
   Exclude:
     - 'db/**/*'
     - 'bin/*'
@@ -12,3 +13,15 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
     - 'path/ruby'
+
+Metrics/LineLength:
+  Enabled: false
+
+Airbnb/ClassOrModuleDeclaredInWrongFile:
+  Enabled: false
+
+Airbnb/ModuleMethodInWrongFile:
+  Enabled: false
+
+Airbnb/RiskyActiverecordInvocation:
+  Enabled: false
