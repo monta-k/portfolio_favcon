@@ -5,25 +5,6 @@
   </div>
 </div>
 
-<div class="container category">
-  <div class="row">
-    <div class="col-md-4">
-      <%= image_tag "movie-icon.jpeg", size: "128x128" %>
-      <h2>Movie</h2>
-      <p>お気に入りの映画・ドラマについて投稿しよう</p>
-      <%= link_to "投稿をチェックする", movie_index_path, class: "btn btn-outline-secondary" %>
-    </div>
-    <div class="col-md-4">
-      <%= image_tag "music-icon.jpeg", size: "128x128" %>
-      <h2>Music</h2>
-      <p>お気に入りの音楽について投稿しよう</p>
-      <%= link_to "投稿をチェックする", music_index_path, class: "btn btn-outline-secondary" %>
-    </div>
-    <div class="col-md-4">
-      <%= image_tag "book-icon.jpeg", size: "128x128" %>
-      <h2>Book</h2>
-      <p>お気に入りの本について投稿しよう</p>
-      <%= link_to "投稿をチェックする", "#", class: "btn btn-outline-secondary" %>
-    </div>
-  </div>
+<div class="post-list">
+  <%= render 'posts/post_list' %>
 </div>

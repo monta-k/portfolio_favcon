@@ -1,0 +1,24 @@
+<div class="user-info">
+  <%= image_tag @user.image.thumb.url, size: "100x100" ,class: "rounded-circle" %>
+  <h2><%= @user.username %></h2>
+  <section class="stats">
+    <%= render 'shared/stats', user: @user %>
+  </section>
+  <%= render 'users/follow_form', user: @user %>
+</div>
+
+<div class="user-list">
+  <h3 class="text-center"><%= "#{@title} : #{@users.count}" %></h3>
+  <ul class="row">
+    <% @users.each do |user| %>
+      <li>
+        <%= link_to user_path(user) do %>
+          <div class="user-info">
+            <%= image_tag user.image.thumb.url, size: "75x75" ,class: "rounded-circle" %>
+            <h4><%= user.username %></h4>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
