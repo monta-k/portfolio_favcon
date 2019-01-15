@@ -133,7 +133,14 @@ body {
       list-style: none;
       background-color: white;
       border-radius: 10px;
-      position: relative;
+      .user-info {
+        position: relative;
+        .post-like {
+          position: absolute;
+          right: 0;
+          bottom: 3px;
+        }
+      }
       .content {
         border-top: solid 1px #eee;
       }
