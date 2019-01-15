@@ -1,0 +1,2 @@
+$("#post-like-<%= @post.id.to_s %>").
+  html('<%= link_to image_tag("heart.png", size: "30x30"), like_path(@post.liked_by(current_user)), method: :delete, remote: true, class: "no-love" %><p><%= @post.likes.count %>件</p>');
