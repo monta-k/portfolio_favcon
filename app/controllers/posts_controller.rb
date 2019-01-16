@@ -22,6 +22,9 @@ class PostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def show
+  end
+
   private
 
   def post_params
