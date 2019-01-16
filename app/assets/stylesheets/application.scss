@@ -135,6 +135,11 @@ body {
       border-radius: 10px;
       .user-info {
         position: relative;
+        .post-comment {
+          position: absolute;
+          right: 35px;
+          bottom: 3px;
+        }
         .post-like {
           position: absolute;
           right: 0;
@@ -199,10 +204,86 @@ body {
   }
 }
 
-//音楽投稿ページ
+//投稿ページ
 .post-form {
   width: 70%;
   textarea {
     height: 150px;
+  }
+}
+
+.form-control {
+  resize: none;
+}
+
+//コメントページ
+.post-show {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  width: 70%;
+  .user-info {
+    position: relative;
+    .post-comment {
+      position: absolute;
+      right: 35px;
+      bottom: 3px;
+    }
+    .post-like {
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+    }
+  }
+  .content {
+    border-top: solid 1px #eee;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    .post-user-info {
+      padding-top: 5px;
+      border-top: solid 1px #eee;
+      h6 {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.comment-list {
+  margin-top: 10px;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 10px;
+      width: 50%;
+      list-style: none;
+      position: relative;
+      .content {
+        border-top: solid 1px #eee;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        .comment-user-info {
+          padding-top: 5px;
+          border-top: solid 1px #eee;
+          h6 {
+            display: inline-block;
+          }
+        }
+      }
+      .delete-button {
+        font-size: 15px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+      }
+    }
   }
 }

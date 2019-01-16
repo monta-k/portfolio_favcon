@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   enum track_type: { movie: 0, music: 1 }
   validates :artistName, presence: true
