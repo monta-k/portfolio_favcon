@@ -11,8 +11,10 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.build(post_params)
     if post.save
-      redirect_to user_path(current_user)
+      flash[:notice] = "投稿が完了しました。"
+      redirect_to request.referrer
     else
+      flash[:alert] = "投稿に失敗しました。"
       redirect_to request.referrer
     end
   end
