@@ -43,6 +43,7 @@ gem 'httparty'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
 
 group :production do
   gem 'pg'
