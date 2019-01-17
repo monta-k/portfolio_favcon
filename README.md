@@ -1,25 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Favconは音楽・映画の感想を共有するサービスです。
+音楽・映画情報はAPIを用いてiTunesから読み込んでいます。
+https://favcon.herokuapp.com/
 
-Things you may want to cover:
+現在はダミーメールアドレスでもユーザー登録が可能となっています。
 
-* Ruby version
+機能はこれからも追加実装していきます。
 
-* System dependencies
+現在の機能概要
 
-* Configuration
+・メールアドレスとパスワードによるログイン機能/ログアウト機能
 
-* Database creation
+・ユーザー情報の変更機能/アカウント削除機能
 
-* Database initialization
+・音楽・映画検索機能(未登録者でも可)
 
-* How to run the test suite
+・音楽全体・映画全体それぞれの投稿一覧/アーテイスト・曲・映画それぞれの投稿一覧(未登録者でも可)
 
-* Services (job queues, cache servers, search engines, etc.)
+・曲・映画単位で感想を投稿できる機能/投稿削除機能
 
-* Deployment instructions
+・他ユーザーフォロー機能
 
-* ...
+・いいね機能
+
+・コメント機能
+
+・タイムラインに自分とフォローユーザーの投稿を表示
+
 # portfolio_favcon
