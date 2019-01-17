@@ -1,7 +1,7 @@
 <h2>Please Sign in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= devise_error_messages %>
 
   <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
   <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>

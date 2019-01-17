@@ -7,8 +7,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
+      flash[:notice] = "ユーザー情報を更新しました。"
       redirect_to root_path
     else
+      flash.now[:alert] = "ユーザー情報の更新に失敗しました。"
       render 'edit'
     end
   end
@@ -36,12 +38,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :sex, :image)
-  end
-
-  def logged_in_user
-    unless current_user
-      redirect_to new_user_session_url
-    end
   end
 
   def correct_user

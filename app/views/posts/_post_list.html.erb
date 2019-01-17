@@ -1,34 +1,7 @@
 <ul class="row">
   <% @posts.each do |post| %>
     <li>
-      <div class="user-info">
-        <h4> <%= post.trackName %></h4>
-        <h5><%= post.artistName %></h5>
-        <div class="post-comment">
-          <%= link_to image_tag("comment.png", size: "33x33"), post_comments_path(post), class: "comment" %>
-          <p><%= post.comments.size %>件</p>
-        </div>
-        <div id="post-like-<%= post.id.to_s %>" class="post-like">
-          <% if post.liked_by(current_user).present? %>
-            <%= link_to image_tag("heart.png", size: "30x30"), like_path(post.liked_by(current_user)), method: :delete, remote: true, class: "no-love" %>
-          <% else %>
-            <%= link_to image_tag("no-heart.png", size: "30x30"), post_likes_path(post), method: :post, remote: true, class: "love" %>
-          <% end %>
-          <p><%= post.likes.size %>件</p>
-        </div>
-      </div>
-      <div class="content">
-        <p><%= post.content %></p>
-      </div>
-      <%= link_to user_path(post.user) do %>
-        <div class="post-user-info">
-          <%= image_tag post.user.image.thumb.url, size: "50x50" ,class: "rounded-circle" %>
-          <h6><%= post.user.username %></h6>
-        </div>
-      <% end %>
-      <% if post.user == current_user %>
-        <%= link_to "投稿削除", post, method: :delete, data: {confirm: "削除してよろしいですか？"}, class: "delete-button" %>
-      <% end %>
+      <%= render "posts/post", post: post %>
     </li>
   <% end %>
 </ul>
