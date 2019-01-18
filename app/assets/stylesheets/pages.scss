@@ -1,3 +1,83 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//トップ画面
+.main-img {
+  width: 100%;
+  margin: auto;
+  @media screen and (max-width: 400px) {
+    height: 350px;
+    background-image: image-url("music.jpg")
+  }
+  @media screen and (min-width: 401px) {
+    height: 450px;
+    background-image: image-url("movie.jpg"), image-url("music.jpg"), image-url("book.jpg");
+    background-position: left, center, right;
+    background-repeat  : no-repeat, no-repeat, no-repeat;
+    background-size: 33.33333333% 100%, 33.33333333% 100%, 33.33333333% 100%;
+  }
+  .form {
+    background-color: rgba(192,192,192,0.2);
+    border-radius: 10px 10px 10px 10px;
+    @media screen and (min-width: 400px) {
+      height: 80%;
+      width: 30%;
+      margin-left: 800px;
+      padding: 30px;
+    }
+    @media screen and (max-width: 400px) {
+      width: 100%;
+    }
+    .actions {
+      margin: 10px 0 10px 0;
+    }
+    a {
+      color: navy;
+      text-decoration: none;
+    }
+    p {
+      margin: 0;
+      font-size: 3px;
+    }
+  }
+}
+
+.main-text {
+  h1 {
+    font-family: "impact";
+    color: #ddd;
+    letter-spacing: 0.3em;
+    font-size: 50px;
+    margin: 10px 0 0 30px;
+  }
+}
+
+.category  {
+  @media screen and (min-width: 400px) {
+    margin-top: 100px;
+  }
+  @media screen and (max-width: 400px) {
+    margin-top: 20px;
+  }
+  .row {
+    padding: 10px;
+    background-color: white;
+    border-radius: 30px;
+    .col-md-4{
+      text-align: center;
+      @media screen and (min-width: 400px) {
+        width: 33.33333333%;
+      }
+      @media screen and (max-width: 400px) {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+//タイムライン
+
+.user-info {
+  text-align: center;
+  padding: 10px 0px;
+  a {
+    text-decoration: none;
+  }
+}

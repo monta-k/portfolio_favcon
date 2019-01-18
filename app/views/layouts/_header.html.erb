@@ -1,16 +1,33 @@
-<nav class="site-header py-1 fixed-top my-auto">
-  <div class="container d-flex flex-column flex-md-row justify-content-between">
-    <%= link_to "FavCon", root_path, class: "py-2 h5" %>
-    <% if current_user %>
-      <%= link_to "Mypage", user_path(current_user), class: "py-2 d-none d-md-inline-block" %>
-    <% end %>
-    <%= link_to "Movie", movie_index_path, class: "py-2 d-none d-md-inline-block" %>
-    <%= link_to "Music", music_index_path, class: "py-2 d-none d-md-inline-block" %>
-    <% if current_user %>
-      <%= link_to "Setting", edit_user_path(current_user), class: "py-2 d-none d-md-inline-block" %>
-      <%= link_to "Logout", destroy_user_session_url, method: :delete, class: "py-2 d-none d-md-inline-block" %>
-    <% else %>
-      <%= link_to "Login", new_user_session_url, class: "py-2 d-none d-md-inline-block" %>
-    <% end %>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+  <%= link_to "FavCon", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto mx-auto">
+      <% if current_user %>
+        <li class="nav-item active">
+          <%= link_to "Mypage", user_path(current_user), class: "nav-link" %>
+        </li>
+      <% end %>
+      <li class="nav-item active">
+        <%= link_to "Movie", movie_index_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Music", music_index_path, class: "nav-link" %>
+      </li>
+      <% if current_user %>
+        <li class="nav-item active">
+          <%= link_to "Setting", edit_user_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Logout", destroy_user_session_url, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to "Login", new_user_session_url, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>

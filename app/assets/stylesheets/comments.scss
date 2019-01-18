@@ -1,3 +1,92 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//コメントページ
+.post-show {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  width: 70%;
+  position: relative;
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+  .user-info {
+    position: relative;
+    @media screen and (max-width: 400px) {
+      h4 {
+        font-size: 20px;
+      }
+      h5 {
+        font-size: 15px;
+      }
+    }
+    .post-comment {
+      position: absolute;
+      right: 35px;
+      bottom: 3px;
+    }
+    .post-like {
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+    }
+  }
+  .content {
+    border-top: solid 1px #eee;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    .post-user-info {
+      padding-top: 5px;
+      border-top: solid 1px #eee;
+      h6 {
+        display: inline-block;
+      }
+    }
+  }
+  .delete-button {
+    font-size: 15px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+.comment-list {
+  margin-top: 10px;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: white;
+      border-radius: 10px;
+      width: 50%;
+      list-style: none;
+      position: relative;
+      @media screen and (max-width: 400px) {
+        width: 80%;
+      }
+      .content {
+        border-top: solid 1px #eee;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        .comment-user-info {
+          padding-top: 5px;
+          border-top: solid 1px #eee;
+          h6 {
+            display: inline-block;
+          }
+        }
+      }
+      .delete-button {
+        font-size: 15px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+//投稿一覧
+.post-list {
+  margin: 0;
+  padding: 0;
+  .posts-count {
+    margin-top: 15px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    @media screen and (max-width: 400px) {
+      li {
+        width: 98%;
+        padding: 10px;
+        margin: 10px 1%;
+        list-style: none;
+        background-color: white;
+        border-radius: 10px;
+        .user-info {
+          position: relative;
+          @media screen and (max-width: 400px) {
+            h4 {
+              font-size: 20px;
+            }
+            h5 {
+              font-size: 15px;
+            }
+          }
+          .post-comment {
+            position: absolute;
+            right: 35px;
+            bottom: 3px;
+          }
+          .post-like {
+            position: absolute;
+            right: 0;
+            bottom: 3px;
+          }
+        }
+        .content {
+          border-top: solid 1px #eee;
+        }
+        a {
+          color: black;
+          text-decoration: none;
+          .post-user-info {
+            padding-top: 5px;
+            border-top: solid 1px #eee;
+            h6 {
+              display: inline-block;
+            }
+          }
+        }
+        .delete-button {
+          font-size: 15px;
+          float: right;
+        }
+      }
+    }
+    @media screen and (min-width: 401px) {
+      li {
+        width: 48%;
+        padding: 10px;
+        margin: 10px 1%;
+        list-style: none;
+        background-color: white;
+        border-radius: 10px;
+        .user-info {
+          position: relative;
+          .post-comment {
+            position: absolute;
+            right: 35px;
+            bottom: 3px;
+          }
+          .post-like {
+            position: absolute;
+            right: 0;
+            bottom: 3px;
+          }
+        }
+        .content {
+          border-top: solid 1px #eee;
+        }
+        a {
+          color: black;
+          text-decoration: none;
+          .post-user-info {
+            padding-top: 5px;
+            border-top: solid 1px #eee;
+            h6 {
+              display: inline-block;
+            }
+          }
+        }
+        .delete-button {
+          font-size: 15px;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+//投稿ページ
+.post-form {
+  width: 70%;
+  textarea {
+    height: 150px;
+  }
+}
+
+.form-control {
+  resize: none;
+}
