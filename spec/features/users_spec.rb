@@ -40,12 +40,12 @@ feature "Users" do
       # ログイン画面に遷移すること
       expect(page).to have_current_path(new_user_session_path)
       # ログイン
-      sign_in(admin_user.email, admin_user.password)
+      sign_in_fill(admin_user.email, admin_user.password)
       expect(page).to have_current_path(root_path)
       # ユーザー情報編集ページへ遷移できること
       click_link "Setting"
       expect(page).to have_current_path(edit_user_path(admin_user))
-      # アカウント削除ボタンを押下するとDBからユーザー情報が削除されsign_inページへ遷移すること
+      # アカウント削除ボタンを押下するとDBからユーザー情報が削除されsign_in_fillページへ遷移すること
       expect { click_link "アカウントを削除" }.to change(User, :count).by(-1)
       expect(page).to have_current_path(new_user_session_path)
     end
@@ -59,7 +59,7 @@ feature "Users" do
       # ログイン画面に遷移すること
       expect(page).to have_current_path(new_user_session_path)
       # ログイン
-      sign_in(admin_user.email, admin_user.password)
+      sign_in_fill(admin_user.email, admin_user.password)
       expect(page).to have_current_path(root_path)
       # ユーザー情報編集ページへ遷移できること
       click_link "Setting"
@@ -84,7 +84,7 @@ feature "Users" do
       # ログイン画面に遷移すること
       expect(page).to have_current_path(new_user_session_path)
       # ログイン
-      sign_in(admin_user.email, admin_user.password)
+      sign_in_fill(admin_user.email, admin_user.password)
       expect(page).to have_current_path(root_path)
       # ユーザー情報編集ページへ遷移できること
       click_link "Setting"
