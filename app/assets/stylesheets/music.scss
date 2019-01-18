@@ -1,3 +1,18 @@
-// Place all the styles related to the Music controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//音楽ページ
+.search-area {
+  width: 30%;
+  @media screen and (max-width: 400px) {
+    width: 80%;
+  }
+  .btn {
+    margin-top: 5px;
+  }
+}
+
+.music-list {
+  .track {
+    width: 20%;
+    display: inline-block;
+    margin: 30px;
+  }
+}

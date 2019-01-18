@@ -36,9 +36,11 @@
       </div>
 
       <%= f.submit "変更する", class: "btn btn-primary" %>
-      <%= link_to "パスワード変更", edit_user_registration_path(@user), class: "btn btn-primary" %>
-      <%= link_to "アカウントを削除", registration_path(@user),
-            class: "btn btn-danger float-right", method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      <div class="btn-area">
+        <%= link_to "パスワード変更", edit_user_registration_path(@user), class: "btn btn-primary" %>
+        <%= link_to "アカウントを削除", registration_path(@user),
+              class: "btn btn-danger", method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      </div>
     <% end %>
   </div>
 </div>

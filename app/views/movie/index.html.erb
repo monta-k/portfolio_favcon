@@ -2,6 +2,7 @@
   <%= form_tag(movie_index_path, method: :get) do %>
     <%= label_tag(:q, "映画タイトルで検索") %>
     <%= text_field_tag(:q, "", class: "form-control" ) %>
+    <%= submit_tag "検索", class: "btn btn-primary" %>
   <% end %>
 </div>
 <% if @movie_lists %>
