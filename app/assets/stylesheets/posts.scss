@@ -107,6 +107,15 @@
 }
 
 //投稿ページ
+.track-title {
+  width: 70%;
+  @media screen and (max-width: 400px) {
+    h2 {
+      font-size: 25px;
+    }
+  }
+}
+
 .post-form {
   width: 70%;
   textarea {
@@ -116,4 +125,8 @@
 
 .form-control {
   resize: none;
+}
+
+.posts-count {
+  font-size: 25px;
 }

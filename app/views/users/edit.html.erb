@@ -2,9 +2,9 @@
 <div class="profile-form-image">
   <%= image_tag "person.jpeg", size: "128x128" %>
 </div>
-<div class="edit-profile-wrapper">
+<div class="edit-profile-wrapper text-center">
   <h2>ユーザー情報変更</h2>
-  <div class="profile-form-wrap mx-auto">
+  <div class="profile-form-wrap mx-auto text-left">
     <% @user.errors.full_messages.each do |message| %>
       <%= message %>
     <% end %>

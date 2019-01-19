@@ -8,8 +8,8 @@ class Post < ApplicationRecord
   validates :trackName, presence: true
   validates :trackId, presence: true
   validates :genre, presence: true
+  validates :artwork, presence: true
   validates :content, presence: true, length: { maximum: 400 }
-
   def liked_by(user)
     Like.find_by(user_id: user.id, post_id: id)
   end

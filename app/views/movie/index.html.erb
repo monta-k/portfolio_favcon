@@ -1,12 +1,12 @@
 <div class="search-area mx-auto">
   <%= form_tag(movie_index_path, method: :get) do %>
-    <%= label_tag(:q, "映画タイトルで検索") %>
+    <%= label_tag(:q, "投稿したい映画をタイトルで検索しよう") %>
     <%= text_field_tag(:q, "", class: "form-control" ) %>
     <%= submit_tag "検索", class: "btn btn-primary" %>
   <% end %>
 </div>
 <% if @movie_lists %>
-  <h1>検索結果：<%= @search_word %></h1>
+  <h2 class="content-search-title">検索結果：<%= @search_word %></h2>
   <div class="music-list mx-auto row">
     <% @movie_lists.each do |list| %>
       <div class="track">

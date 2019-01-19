@@ -3,7 +3,7 @@
   <% @post.comments.order(created_at: :desc).each do |comment| %>
     <li class="mx-auto">
       <div class="comment">
-        <p><%= comment.comment %></p>
+        <%= simple_format(comment.comment) %>
       </div>
       <%= link_to user_path(comment.user) do %>
         <div class="comment-user-info">
