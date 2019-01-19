@@ -1,12 +1,12 @@
 <div class="search-area mx-auto">
   <%= form_tag(music_index_path, method: :get) do %>
-    <%= label_tag(:q, "アーティスト名で検索") %>
+    <%= label_tag(:q, "投稿したい曲をアーティスト名で検索しよう") %>
     <%= text_field_tag(:q, "", class: "form-control" ) %>
     <%= submit_tag "検索", class: "btn btn-primary" %>
   <% end %>
 </div>
 <% if @artist_lists %>
-  <h1>検索結果：<%= @search_word %></h1>
+  <h2 class="content-search-title">検索結果：<%= @search_word %></h2>
   <div class="music-list mx-auto">
     <% @artist_lists.each do |list| %>
       <div class="track">
@@ -15,7 +15,7 @@
     <% end %>
   </div>
 <% elsif @album_lists %>
-  <h1><%= @artist_name %></h1>
+  <h2 class="content-search-title"><%= @artist_name %></h2>
   <div class="music-list mx-auto row">
     <% @album_lists.from(1).each do |list| %>
       <div class="track">
@@ -28,8 +28,10 @@
     <% end %>
   </div>
 <% elsif @song_lists %>
-  <%= image_tag @song_lists.first["artworkUrl100"], size: "200x200" %>
-  <h1><%= @album_name %></h1>
+  <div class="content-search-title">
+    <%= image_tag @song_lists.first["artworkUrl100"], size: "200x200" %>
+    <h2><%= @album_name %></h2>
+  </div>
   <div class="music-list mx-auto row">
     <% @song_lists.from(1).each do |list| %>
       <div class="track">
