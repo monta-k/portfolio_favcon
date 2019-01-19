@@ -6,6 +6,7 @@ FactoryBot.define do
     trackId { "123" }
     genre { "action" }
     content { "映画感想" }
+    artwork { "person.jpg" }
   end
 
   factory :music_post, class: "Post" do
@@ -15,5 +16,6 @@ FactoryBot.define do
     trackId { "456" }
     genre { "rock" }
     content { "音楽感想" }
+    artwork { "person.jpg" }
   end
 end

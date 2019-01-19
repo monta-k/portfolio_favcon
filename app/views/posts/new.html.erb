@@ -13,6 +13,7 @@
         <%= f.hidden_field :trackId, value: @track["trackId"] %>
         <%= f.hidden_field :collectionId, value: @track["collectionId"] %>
         <%= f.hidden_field :genre, value: @track["primaryGenreName"] %>
+        <%= f.hidden_field :artwork, value: @track["artworkUrl60"] %>
         <% if @track["kind"] == "feature-movie" %>
           <%= f.hidden_field :track_type, value: "movie" %>
         <% elsif @track["kind"] == "song" %>

@@ -1,4 +1,5 @@
 <div class="user-info">
+  <%= image_tag post.artwork %>
   <h4> <%= post.trackName %></h4>
   <h5><%= post.artistName %></h5>
   <% if current_user %>
@@ -17,8 +18,9 @@
   <% end %>
 </div>
 <div class="content">
-  <p><%= post.content %></p>
+  <%= simple_format(post.content) %>
 </div>
+<div class="post-bottom">
 <%= link_to user_path(post.user) do %>
   <div class="post-user-info">
     <%= image_tag post.user.image.thumb.url, size: "50x50" ,class: "rounded-circle" %>
@@ -28,3 +30,4 @@
 <% if post.user == current_user %>
   <%= link_to "投稿削除", post, method: :delete, data: {confirm: "削除してよろしいですか？"}, class: "delete-button" %>
 <% end %>
+</div>
