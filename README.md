@@ -30,4 +30,6 @@ https://favcon.herokuapp.com/
 
 ・タイムラインに自分とフォローユーザーの投稿を表示
 
+・投稿ページにて曲と映画の視聴が可能
+
 # portfolio_favcon
