@@ -10,20 +10,20 @@
     color: #696969;
     display: inline;
     border-bottom: solid 1px #696969;
-    @media screen and (min-width: 401px) {
+    @media screen and (min-width: 451px) {
       width: 40%;
     }
   }
   .profile-form-wrap {
     background-color: white;
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 450px) {
       margin-top: 20px;
       padding: 10px;
       .btn-danger {
 
       }
     }
-    @media screen and (min-width: 401px) {
+    @media screen and (min-width: 451px) {
       margin-top: 10px;
       width: 40%;
       padding: 40px;

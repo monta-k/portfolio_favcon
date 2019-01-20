@@ -2,11 +2,11 @@
 .main-img {
   width: 100%;
   margin: auto;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     height: 350px;
     background-image: image-url("music.jpg")
   }
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 451px) {
     height: 450px;
     background-image: image-url("movie.jpg"), image-url("music.jpg"), image-url("book.jpg");
     background-position: left, center, right;
@@ -16,13 +16,13 @@
   .form {
     background-color: rgba(192,192,192,0.2);
     border-radius: 10px 10px 10px 10px;
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 450px) {
       height: 80%;
       width: 30%;
       margin-left: 800px;
       padding: 30px;
     }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 450px) {
       width: 100%;
     }
     .actions {
@@ -50,10 +50,10 @@
 }
 
 .category  {
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 450px) {
     margin-top: 100px;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     margin-top: 20px;
   }
   .row {
@@ -62,10 +62,10 @@
     border-radius: 30px;
     .col-md-4{
       text-align: center;
-      @media screen and (min-width: 400px) {
+      @media screen and (min-width: 450px) {
         width: 33.33333333%;
       }
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 450px) {
         margin: 10px 0;
       }
     }
