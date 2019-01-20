@@ -1,5 +1,6 @@
 <div class="track-title mx-auto">
   <%= image_tag @track["artworkUrl100"] %>
+  <%= link_to "今すぐ視聴する", @track["previewUrl"], target: "_blank", class: "btn btn-success" %>
   <h2><%= @track["trackName"] %>/<%= @track["artistName"] %></h2>
 </div>
 
