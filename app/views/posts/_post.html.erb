@@ -1,7 +1,9 @@
 <div class="user-info">
-  <%= image_tag post.artwork %>
-  <h4> <%= post.trackName %></h4>
-  <h5><%= post.artistName %></h5>
+  <%= link_to new_post_path(track: LookupTrack.search_by_trackid(post.trackId, post.track_type)) do %>
+    <%= image_tag post.artwork %>
+    <h4> <%= post.trackName %></h4>
+  <% end %>
+  <h5><%= link_to post.artistName, (post.track_type == "movie" ? movie_index_path : music_index_path(artist_id: post.artistId)) %></h5>
   <% if current_user %>
     <div class="post-comment">
       <%= link_to image_tag("comment.png", size: "33x33"), post_comments_path(post), class: "comment" %>

@@ -5,12 +5,12 @@
   border-radius: 10px;
   width: 70%;
   position: relative;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     width: 100%;
   }
   .user-info {
     position: relative;
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 450px) {
       h4 {
         font-size: 20px;
       }
@@ -64,7 +64,7 @@
       width: 50%;
       list-style: none;
       position: relative;
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 450px) {
         width: 80%;
       }
       .content {
