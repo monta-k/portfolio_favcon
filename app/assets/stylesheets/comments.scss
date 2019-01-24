@@ -53,7 +53,7 @@
 
 .comment-list {
   margin-top: 10px;
-  ul {
+  .comment {
     padding: 0;
     margin: 0;
     li {
@@ -86,6 +86,16 @@
         position: absolute;
         bottom: 5px;
         right: 5px;
+      }
+    }
+  }
+  nav {
+    margin-top: 20px;
+    text-align: center;
+    .pagination {
+      display: inline-block;
+      li {
+        float: left;
       }
     }
   }

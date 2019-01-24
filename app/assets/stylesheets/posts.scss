@@ -5,7 +5,7 @@
   .posts-count {
     margin-top: 15px;
   }
-  ul {
+  .row {
     padding: 0;
     margin: 0;
     @media screen and (max-width: 450px) {
@@ -101,6 +101,16 @@
           font-size: 15px;
           float: right;
         }
+      }
+    }
+  }
+  nav {
+    margin-top: 20px;
+    text-align: center;
+    .pagination {
+      display: inline-block;
+      li {
+        float: left;
       }
     }
   }

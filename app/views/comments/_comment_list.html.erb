@@ -1,6 +1,6 @@
 <h3 class="text-center">コメント：<%= @post.comments.size %>件</h3>
-<ul>
-  <% @post.comments.order(created_at: :desc).each do |comment| %>
+<ul class="comment">
+  <% @post.comments.order(created_at: :desc).page(params[:page]).per(8).each do |comment| %>
     <li class="mx-auto">
       <div class="comment">
         <%= simple_format(comment.comment) %>
@@ -17,3 +17,4 @@
     </li>
   <% end %>
 </ul>
+<%= paginate @post.comments.order(created_at: :desc).page(params[:page]).per(8) %>
