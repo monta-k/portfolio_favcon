@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  POSTS_PER_PAGE = 6
   before_action :authenticate_user!, only: [:edit, :update, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
 
@@ -17,20 +18,20 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.includes(:likes).order(created_at: :desc)
+    @posts = @user.posts.includes(:likes).order(created_at: :desc).page(params[:page]).per(POSTS_PER_PAGE)
   end
 
   def following
     @title = "フォローしているユーザー"
     @user = User.find(params[:id])
-    @users = @user.following
+    @users = @user.following.page(params[:page]).per(POSTS_PER_PAGE)
     render 'show_follow'
   end
 
   def followers
     @title = "フォローされているユーザー"
     @user = User.find(params[:id])
-    @users = @user.followers
+    @users = @user.followers.page(params[:page]).per(POSTS_PER_PAGE)
     render 'show_follow'
   end
 

@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+  POSTS_PER_PAGE = 6
   before_action :authenticate_user!, only: [:create, :destroy]
   before_action :correct_user, only: [:destroy]
 
   def new
     @track = params[:track]
     @post = current_user.posts.build if user_signed_in?
-    @posts = Post.where(trackId: @track["trackId"])
+    @posts = Post.where(trackId: @track["trackId"]).order(created_at: :desc).page(params[:page]).per(POSTS_PER_PAGE)
   end
 
   def create

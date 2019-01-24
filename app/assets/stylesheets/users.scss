@@ -35,3 +35,16 @@
     border-top: 1px solid #eee;
   }
 }
+
+.user-list {
+  nav {
+    margin-top: 20px;
+    text-align: center;
+    .pagination {
+      display: inline-block;
+      li {
+        float: left;
+      }
+    }
+  }
+}
