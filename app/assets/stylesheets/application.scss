@@ -5,6 +5,7 @@
 @import "users.scss";
 @import "music.scss";
 @import "comments.scss";
+@import "notifications.scss";
 
 body {
   background-color: #eee
@@ -24,6 +25,7 @@ body {
 //ヘッダー
 .navbar {
   background-color: black;
+  @media screen and (min-width: 451px) {
   .collapse {
     text-align: center;
     ul {
@@ -39,4 +41,5 @@ body {
       }
     }
   }
+}
 }
