@@ -6,7 +6,10 @@ class LikesController < ApplicationController
     @like = current_user.likes.build(like_params)
     @post = @like.post
     if @like.save
-      respond_to :js
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     end
   end
 
@@ -14,7 +17,10 @@ class LikesController < ApplicationController
     @like = Like.find(params[:id])
     @post = @like.post
     if @like.destroy
-      respond_to :js
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     end
   end
 
