@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    resources :likes, only: [:index], shallow: true
   end
   resources :music, only: [:index]
   resources :movie, only: [:index]
