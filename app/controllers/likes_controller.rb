@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  POSTS_PER_PAGE = 6
+  before_action :authenticate_user!, only: [:create, :destroy, :index]
   after_action :create_notifications, only: [:create]
 
   def create
@@ -22,6 +23,11 @@ class LikesController < ApplicationController
         format.js
       end
     end
+  end
+
+  def index
+    @user = User.find(params[:user_id])
+    @posts = Post.joins(likes: :user).includes(likes: :user).where(likes: { user_id: @user.id }).order("likes.created_at DESC").page(params[:page]).per(POSTS_PER_PAGE)
   end
 
   private

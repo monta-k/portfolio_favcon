@@ -10,10 +10,10 @@
 <div class="post-like-switching mx-auto">
   <ul class=row>
     <%= link_to user_path(@user) do %>
-      <li class="active">投稿一覧</li>
+      <li>投稿一覧</li>
     <% end %>
     <%= link_to user_likes_path(@user) do %>
-      <li>いいねした投稿一覧</li>
+      <li class="active">いいねした投稿一覧</li>
     <% end %>
   </ul>
 </div>
