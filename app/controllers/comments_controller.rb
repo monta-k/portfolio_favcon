@@ -6,7 +6,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     if @comment.save
       @post = @comment.post
-      respond_to :js
+      respond_to do |format|
+        format.html { redirect_to post_comments_path(@post) }
+        format.js
+      end
     end
   end
 
@@ -14,7 +17,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.destroy
       @post = @comment.post
-      respond_to :js
+      respond_to do |format|
+        format.html { redirect_to post_comments_path(@post) }
+        format.js
+      end
     end
   end
 

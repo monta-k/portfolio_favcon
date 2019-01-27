@@ -5,8 +5,8 @@
   <% end %>
   <h5><%= link_to post.artistName, (post.track_type == "movie" ? movie_index_path : music_index_path(artist_id: post.artistId)) %></h5>
   <% if current_user %>
-    <div class="post-comment">
-      <%= link_to image_tag("comment.png", size: "33x33"), post_comments_path(post), class: "comment" %>
+    <div id="post-comment-<%= post.id.to_s %>" class="post-comment">
+      <%= link_to image_tag("comment.png", size: "33x33", alt: "コメント一覧"), post_comments_path(post), class: "comment" %>
       <p><%= post.comments.size %>件</p>
     </div>
     <div id="post-like-<%= post.id.to_s %>" class="post-like">

@@ -1,7 +1,7 @@
 <h3 class="text-center">コメント：<%= @post.comments.size %>件</h3>
 <ul class="comment">
   <% @post.comments.order(created_at: :desc).page(params[:page]).per(8).each do |comment| %>
-    <li class="mx-auto">
+    <li id="comment-<%= comment.id.to_s %>" class="mx-auto">
       <div class="comment">
         <%= simple_format(comment.comment) %>
       </div>
