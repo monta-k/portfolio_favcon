@@ -40,7 +40,7 @@ describe LikesController do
     end
 
     # likeモデルが削除されること
-    it "saves the new like in the database" do
+    it "delete like from the database" do
       expect { post :destroy, xhr: true, params: { id: like.id } }.to change(Like, :count).by(-1)
     end
 
