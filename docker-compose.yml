@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    build: .
+    command: bin/rails s -b "0.0.0.0"
+    env_file: .env # railsの環境変数を.envで記載する場合
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7.10
+    environment:
+      MYSQL_ROOT_PASSWORD: password # 本番環境では別ファイルで管理すること
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
