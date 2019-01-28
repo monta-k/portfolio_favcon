@@ -1,3 +1,4 @@
+<%= provide(:title, "#{@user.username}のページ") %>
 <div class="user-info">
   <%= image_tag @user.image.thumb.url, size: "100x100" ,class: "rounded-circle" %>
   <h2><%= @user.username %></h2>
