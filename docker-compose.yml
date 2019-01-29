@@ -12,8 +12,6 @@ services:
       - db
   db:
     image: mysql:5.7.10
-    environment:
-      MYSQL_ROOT_PASSWORD: password # 本番環境では別ファイルで管理すること
     ports:
       - "3306:3306"
     volumes:
