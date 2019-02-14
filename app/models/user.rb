@@ -11,7 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum sex: { 男性: 1, 女性: 2 }
+  enum sex: { "男性": 1, "女性": 2 }
 
   validates :username, presence: true, length: { maximum: 20 }
   mount_uploader :image, ImageUploader
