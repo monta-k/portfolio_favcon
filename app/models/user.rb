@@ -11,7 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum sex: { 男性: 1, 女性: 2 }
+  enum sex: { "男性": 1, "女性": 2 }
 
   validates :username, presence: true, length: { maximum: 20 }
   mount_uploader :image, ImageUploader
@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def feed
-    following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
-    Post.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
+    following_ids = Relationship.where(follower_id: id).select(:followed_id)
+    Post.where(user: following_ids).or(Post.where(user: self))
   end
 end
