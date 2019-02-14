@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def feed
-    following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
-    Post.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
+    following_ids = Relationship.where(follower_id: id).select(:followed_id)
+    Post.where(user: following_ids).or(Post.where(user: self))
   end
 end
