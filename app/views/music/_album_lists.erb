@@ -1,0 +1,12 @@
+<h2 class="content-search-title"><%= artist_name %></h2>
+<div class="music-list mx-auto row">
+  <% album_lists.from(1).each do |list| %>
+    <div class="track">
+      <%= link_to music_index_path(album_id: list["collectionId"]) do %>
+        <%= image_tag list["artworkUrl100"] %>
+        <br>
+        <%= list["collectionName"] %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
