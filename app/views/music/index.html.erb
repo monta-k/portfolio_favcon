@@ -1,45 +1,13 @@
 <%= provide(:title, @search_word || @artist_name || @album_name || "音楽ページ") %>
-<div class="search-area mx-auto">
-  <%= form_tag(music_index_path, method: :get) do %>
-    <%= label_tag(:q, "投稿したい曲をアーティスト名で検索しよう") %>
-    <%= text_field_tag(:q, "", class: "form-control" ) %>
-    <%= submit_tag "検索", class: "btn btn-primary" %>
-  <% end %>
-</div>
+
+<%= render "shared/search_form", search_title: "投稿したい曲をアーティスト名で検索しよう", path: music_index_path %>
+
 <% if @artist_lists %>
-  <h2 class="content-search-title">検索結果：<%= @search_word %></h2>
-  <div class="music-list mx-auto">
-    <% @artist_lists.each do |list| %>
-      <div class="track">
-        <%= link_to list["artistName"], music_index_path(artist_id: list["artistId"]) %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "artist_lists", search_word: @search_word, artist_lists: @artist_lists %>
 <% elsif @album_lists %>
-  <h2 class="content-search-title"><%= @artist_name %></h2>
-  <div class="music-list mx-auto row">
-    <% @album_lists.from(1).each do |list| %>
-      <div class="track">
-        <%= link_to music_index_path(album_id: list["collectionId"]) do %>
-          <%= image_tag list["artworkUrl100"] %>
-          <br>
-          <%= list["collectionName"] %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "album_lists", artist_name: @artist_name, album_lists: @album_lists %>
 <% elsif @song_lists %>
-  <div class="content-search-title">
-    <%= image_tag @song_lists.first["artworkUrl100"], size: "200x200" %>
-    <h2><%= @album_name %></h2>
-  </div>
-  <div class="music-list mx-auto row">
-    <% @song_lists.from(1).each do |list| %>
-      <div class="track">
-        <%= link_to list["trackName"], new_post_path(track: list)  %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "song_lists", album_name: @album_name, song_lists: @song_lists %>
 <% end %>
 
 <% if @posts %>

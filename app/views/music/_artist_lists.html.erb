@@ -1,0 +1,8 @@
+<h2 class="content-search-title">検索結果：<%= search_word %></h2>
+<div class="music-list mx-auto">
+  <% artist_lists.each do |list| %>
+    <div class="track">
+      <%= link_to list["artistName"], music_index_path(artist_id: list["artistId"]) %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="content-search-title">
+  <%= image_tag song_lists.first["artworkUrl100"], size: "200x200" %>
+  <h2><%= album_name %></h2>
+</div>
+<div class="music-list mx-auto row">
+  <% song_lists.from(1).each do |list| %>
+    <div class="track">
+      <%= link_to list["trackName"], new_post_path(track: list)  %>
+    </div>
+  <% end %>
+</div>
